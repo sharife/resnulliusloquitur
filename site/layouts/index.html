@@ -2,12 +2,21 @@
 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
-{{ partial "short-text" .Params.blurb}}
+<!-- {{ partial "short-text" .Params.blurb}} -->
 
-{{ partial "2-up" .Params }}
+<div class="mw6 pa3 center cms">
+	<div id="intro"></div>
+		{{ partial "intro" . }}
+	<div id="one"></div>
+		{{ partial "part-1" . }}
+	<div id="two"></div>
+		{{ partial "part-2" . }}
+	<div id="three"></div>
+		{{ partial "part-3" . }}
+	
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+	<!-- {{ .Content }} -->
+</div>
 
-{{ partial "blog" . }}
 
 {{ end }}

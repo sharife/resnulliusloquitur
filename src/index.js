@@ -23,19 +23,21 @@ $(window).scroll(function() {
     else if(isScrolledIntoView($('#two')))
     {
         console.log("two");
-        $("body").css("background-color","darkred");
+        //$("#middle").css("background-color","darkred");
+        //$("body").animate({backgroundColor:'#003366'}, 500);
     }
     else if(isScrolledIntoView($('#three')))
     {
         console.log("three");
+        //$("body").animate({backgroundColor:'#fff'}, 300);
     }    
 });
 
-
+// background color
 var tStart = $('#intro').scrollTop() // Start transition from top
   , tEnd = $("body").height()   // End at 
   , cStart = [0, 0, 0]
-  , cEnd = [240, 240, 240]
+  , cEnd = [220, 220, 220]
   , cDiff = [cEnd[0] - cStart[0], cEnd[1] - cStart[1], cEnd[1] - cStart[0]];
 
 $(document).ready(function(){
@@ -49,6 +51,8 @@ $(document).ready(function(){
     });
 });
 
+
+// text color
 var ttStart = $('#intro').scrollTop() // Start transition from top
   , ttEnd = $("body").height()   // End at 
   , tcStart = [255, 255, 255]  // White

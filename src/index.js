@@ -5,9 +5,21 @@ import "./css/main.css";
 
 $(function () {
   $(".random p").each(function (i, elt) {
+    var vw = $( window ).width() - 100;
+    var w = $( this ).width();
+    var wp = (Math.random() * (w/2));
+    // while (wp < 0) {
+    //   wp = (Math.random() * w)-10;
+    // }
+    var k = 0;
+    while ((wp+w) > vw && k < 100) {
+       wp = (Math.random() * (w/2));
+       k++;
+    }
     $(elt).css({
-      left: Math.random() * 250,
-      top: Math.random() * 50
+      left: wp,
+      top: Math.random() * 50,
+      width: w - wp
     });
   });
 });

@@ -1,19 +1,38 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey w-100 absolute fixed">
+<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center w-100 absolute fixed">
 
 	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none no-underline">
-		<h3 class="f4 f3-ns nowrap grey-3">Res Nullius Loquitur</h3>
+	<a href="/" class="pa3 db mr4 h-100 w3 flex-none no-underline f4">
+		<!-- <h3 class="f4 f3-ns nowrap grey-3">Res Nullius Loquitur</h3> -->
+		&#x2302;
 	</a>
 
 	<!-- Primary Nav -->
-	<ul class="flex grey-3">
-		<li><a href="#intro" class="pa3 no-underline db">Introduction</a></li>
-
-		<li><a href="#one" class="pa3 no-underline db">Part I</a></li>
-
-		<li><a href="#two" class="pa3 no-underline db">Part II</a></li>
-
-		<li><a href="#three" class="pa3 no-underline db">Part III</a></li>
-	</ul>
+	<div id="nav-r" class="br1 pa1 ma3">
+        <a class="b f4 ph2 no-underline" onclick="javascript:toggleMenu();">&#9776;</a>
+    </div>
 
 </nav>
+
+
+
+<div id="mobile-menu" class="absolute fixed bg-black z-max">
+	<div class="bg-white w-100 pa3 db mr4 h-100 tc">
+		<a href="/" class="f4 black no-underline">Res Nullius Loquitur</a>
+	</div>
+	<ul class="pa3 mt2 w-100 white center tc b">
+		<li class="pv1 f3"><a href="#intro" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Introduction</a></li>
+
+		<li class="pv1 f3"><a href="#one" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Part I</a></li>
+
+		<li class="pv1 f3"><a href="#two" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Part II</a></li>
+
+		<li class="pv1 mb3 f3"><a href="#three" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Part III</a></li>	
+	</ul>
+	<p class="pt3 f6 b  center tc w-100"><a class="bg-white black br1 pa2 ph3" onclick="javascript:toggleMenu();">&times;</a></p>
+</div>
+
+<script type="text/javascript">
+	function toggleMenu (){
+		$('#mobile-menu').fadeToggle();
+	}
+</script>

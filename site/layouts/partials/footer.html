@@ -7,7 +7,7 @@
 			<p class="f3 lh-title light-gray tc mb2">Your Response</p>
 			<p>What do you think of this?</p>
 
-			{{ partial "newsletter-form" . }}
+			{{ partial "form" . }}
 
 		</div>
 
@@ -19,3 +19,36 @@
 {{ partial "svg" . }}
 
 <script src="/scrollto.js"></script>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+	  // setup audio
+	  introBg = new Howl({
+	    src: ['/audio/pad3.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  oneBg = new Howl({
+	    src: ['/audio/pad5.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  twoBg = new Howl({
+	    src: ['/audio/pad8.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	});
+</script>

@@ -2,6 +2,19 @@
 
 import "./css/main.css";
 
+
+$(function () {
+  $(".random p").each(function (i, elt) {
+    $(elt).css({
+      left: Math.random() * 250,
+      top: Math.random() * 50
+    });
+  });
+});
+
+var n = 0;
+
+
 function isScrolledIntoView(elem)
 {
     var docViewTop = $(window).scrollTop();
@@ -11,25 +24,51 @@ function isScrolledIntoView(elem)
     return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom) && (elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
+
+
 $(window).scroll(function() {    
     if(isScrolledIntoView($('#intro')))
     {
-        console.log("intro");
+        if (n == 0) {
+            n++;
+            oneBg.stop();
+            introBg.play();
+            introBg.fade(0, 0.3, 10000);
+            console.log("intro");
+            //$("body").animate({backgroundColor:'black'}, 300);
+        }
+        
     }
     else if(isScrolledIntoView($('#one')))
     {
-        console.log("one");
+        if (n > 0) {
+            n = 0;
+            twoBg.stop();
+            introBg.stop();
+            oneBg.play();
+            oneBg.fade(0, 0.3, 10000);
+            console.log("one");
+            //$("body").animate({backgroundColor:'#003366'}, 300);
+        }
     }
     else if(isScrolledIntoView($('#two')))
     {
-        console.log("two");
-        //$("#middle").css("background-color","darkred");
-        //$("body").animate({backgroundColor:'#003366'}, 500);
+        if (n == 0) {
+            n++;
+            oneBg.stop();
+            twoBg.play();
+            twoBg.fade(0, 0.3, 10000);
+            console.log("two");
+           //$("body").animate({backgroundColor:'#A01515'}, 300);
+        }
     }
     else if(isScrolledIntoView($('#three')))
     {
-        console.log("three");
-        //$("body").animate({backgroundColor:'#fff'}, 300);
+        if (n > 0) {
+            n = 0;
+            console.log("three");
+            //$("body").animate({backgroundColor:'white'}, 300);
+        }
     }    
 });
 

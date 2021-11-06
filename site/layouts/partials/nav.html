@@ -8,7 +8,7 @@
 
 	<!-- Primary Nav -->
 	<div id="nav-r" class="br1 pa1 ma3">
-        <a class="b f4 ph2 no-underline" onclick="javascript:toggleMenu();">&#9776;</a>
+        <a class="b f4 ph2 no-underline" style="cursor: pointer;" onclick="javascript:toggleMenu();">&#9776;</a>
     </div>
 
 </nav>
@@ -19,20 +19,75 @@
 	<div class="bg-white w-100 pa3 db mr4 h-100 tc">
 		<a href="/" class="f4 black no-underline">Res Nullius Loquitur</a>
 	</div>
-	<ul class="pa3 mt2 w-100 white center tc b">
-		<li class="pv1 f3"><a href="#intro" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Introduction</a></li>
+	<ul class="pa3 mt2 w-100 white center tc b f4 mb3">
+		<li class="pv1"><a href="#intro" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Introduction</a></li>
 
-		<li class="pv1 f3"><a href="#one" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Part I</a></li>
+		<li class="pv1"><a href="#one" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part I</a></li>
 
-		<li class="pv1 f3"><a href="#two" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Part II</a></li>
+		<li class="pv1"><a href="#two" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part II</a></li>
 
-		<li class="pv1 mb3 f3"><a href="#three" class="pa3 no-underline db" onclick="javascript:toggleMenu();">Part III</a></li>	
+		<li class="pv1"><a href="#three" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part III</a></li>
+
+		<li class="pv1"><a href="#four" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part IV</a></li>
+
+		<li class="pv1"><a href="#five" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part V</a></li>
+
+		<li class="pv1"><a href="#six" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part VI</a></li>
+
+		<li class="pv1"><a href="#seven" class="pa1 no-underline db" onclick="javascript:toggleMenu();">Part VII</a></li>	
 	</ul>
-	<p class="pt3 f6 b  center tc w-100"><a class="bg-white black br1 pa2 ph3" onclick="javascript:toggleMenu();">&times;</a></p>
+	<p class="pt2 f4 b  center tc w-100"><a class="bg-white black br1 pa1 ph3" style="cursor: pointer;" onclick="javascript:toggleMenu();">&times;</a></p>
 </div>
 
 <script type="text/javascript">
+
+	// left: 37, up: 38, right: 39, down: 40,
+	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+	var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+	function preventDefault(e) {
+	  e.preventDefault();
+	}
+
+	function preventDefaultForScrollKeys(e) {
+	  if (keys[e.keyCode]) {
+	    preventDefault(e);
+	    return false;
+	  }
+	}
+
+	// modern Chrome requires { passive: false } when adding event
+	var supportsPassive = false;
+	try {
+	  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+	    get: function () { supportsPassive = true; } 
+	  }));
+	} catch(e) {}
+
+	var wheelOpt = supportsPassive ? { passive: false } : false;
+	var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+
+	// call this to Enable
+	function enableScroll() {
+	    //alert("enable");
+	  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+	  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+	  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+	  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+	}
+
+	// call this to Disable
+	function disableScroll() {
+	    //alert("disable");
+	  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+	  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+	  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+	  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+	}
+
 	function toggleMenu (){
+		enableScroll();
 		$('#mobile-menu').fadeToggle();
 	}
 </script>

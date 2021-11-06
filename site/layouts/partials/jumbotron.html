@@ -7,12 +7,18 @@
         </h1>
       </div>
       <div class="mw7 relative">
-        {{ if .subtitle }}
-        <p class="f4 di lh-title mb3 white mw6">
+        <p class="f4 di mb2 white mw6">
           {{.subtitle}}
         </p>
-        <p class="center pa5"><a href="#intro" class="btn pa3 no-underline db">BEGIN</a></p>
-        {{ end }}
+      </div>
+      <div class="mw7 relative">
+        <p class="f6 di ttu mb3 grey-2 mw6">
+          {{.desc}}
+        </p>
+        <p class="center pa5"><a href="#intro" onclick="javascript:enableScroll();" class="btn pa3 no-underline db">BEGIN</a></p>
+        <p class="f6 di mb3 grey-2 mw6">
+          {{.blurb}}
+        </p>
       </div>
     </div>
   </div>

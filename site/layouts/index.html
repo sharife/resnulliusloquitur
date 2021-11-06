@@ -1,23 +1,31 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle "desc" .Params.desc "blurb" .Params.blurb) }}
 
-<!-- {{ partial "short-text" .Params.blurb}} -->
 
 <div class="mw6 pa3 center cms">
 	<div id="intro"></div>
-		{{ partial "intro" . }}
+	{{ partial "intro" . }}
 	<div id="one"></div>
-		{{ partial "part-1" . }}
+	{{ partial "part-1" . }}
+	<div id="two"></div>
+	{{ partial "part-2" . }}
+	<div id="three"></div>
+	{{ partial "part-3" . }}
+	<div id="four"></div>
+	{{ partial "part-4" . }}
 	<div class="pv5">
 		<img src="/img/icon.svg" class="w-100" />
 	</div>
-	<div id="two"></div>
-		{{ partial "part-2" . }}
-	<div id="three"></div>
-		{{ partial "part-3" . }}
-	
-
+	<div id="five"></div>
+	{{ partial "part-5" . }}
+	<div id="six"></div>
+	{{ partial "part-6" . }}
+	<div id="seven"></div>
+	{{ partial "part-7" . }}
+	<!-- <div class="pv5">
+		<img src="/img/icon.svg" class="w-100" />
+	</div> -->
 	<!-- {{ .Content }} -->
 </div>
 

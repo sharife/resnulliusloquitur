@@ -8,6 +8,26 @@ import "./css/main.css";
 var n = 0;
 
 
+
+$(document).ready(function() {
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + ($(this).outerHeight() * .5);
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                $(this).animate({'opacity':'1'},350);
+            }
+        });
+    });
+});
+
+
+
 function isScrolledIntoView(elem)
 {
     var docViewTop = $(window).scrollTop();
@@ -16,7 +36,6 @@ function isScrolledIntoView(elem)
     var elemBottom = elemTop + $(elem).height();
     return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom) && (elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
-
 
 
 $(window).scroll(function() {    
@@ -59,7 +78,58 @@ $(window).scroll(function() {
     {
         if (n > 0) {
             n = 0;
+            twoBg.stop();
+            fourBg.stop();
+            threeBg.play();
+            threeBg.fade(0, 0.3, 10000);
             console.log("three");
+            //$("body").animate({backgroundColor:'white'}, 300);
+        }
+    } 
+    else if(isScrolledIntoView($('#four')))
+    {
+        if (n == 0) {
+            n++;
+            threeBg.stop();
+            fiveBg.stop();
+            fourBg.play();
+            fourBg.fade(0, 0.3, 10000);
+            console.log("four");
+            //$("body").animate({backgroundColor:'white'}, 300);
+        }
+    } 
+    else if(isScrolledIntoView($('#five')))
+    {
+        if (n > 0) {
+            n = 0;
+            fourBg.stop();
+            sixBg.stop();
+            fiveBg.play();
+            fiveBg.fade(0, 0.3, 10000);
+            console.log("five");
+            //$("body").animate({backgroundColor:'white'}, 300);
+        }
+    } 
+    else if(isScrolledIntoView($('#six')))
+    {
+        if (n == 0) {
+            n++;
+            sevenBg.stop();
+            fiveBg.stop();
+            sixBg.play();
+            sixBg.fade(0, 0.3, 10000);
+            console.log("six");
+            //$("body").animate({backgroundColor:'white'}, 300);
+        }
+    } 
+    else if(isScrolledIntoView($('#seven')))
+    {
+        if (n > 0) {
+            n = 0;
+            sixBg.stop();
+            sevenBg.play();
+            sevenBg.fade(0, 0.3, 10000);
+            console.log("seven");
             //$("body").animate({backgroundColor:'white'}, 300);
         }
     }    

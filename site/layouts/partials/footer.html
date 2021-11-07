@@ -25,7 +25,7 @@
 	$( document ).ready(function() {
 	  // setup audio
 	  introBg = new Howl({
-	    src: ['/audio/pad3.mp3'],
+	    src: ['/audio/intro.mp3'],
 	    autoplay: false,
 	    loop: true,
 	    volume: 0.5,
@@ -34,7 +34,7 @@
 	    }
 	  });
 	  oneBg = new Howl({
-	    src: ['/audio/pad5.mp3'],
+	    src: ['/audio/part1.mp3'],
 	    autoplay: false,
 	    loop: true,
 	    volume: 0.5,
@@ -43,7 +43,52 @@
 	    }
 	  });
 	  twoBg = new Howl({
-	    src: ['/audio/pad8.mp3'],
+	    src: ['/audio/part2.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  threeBg = new Howl({
+	    src: ['/audio/part3.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  fourBg = new Howl({
+	    src: ['/audio/part4.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  fiveBg = new Howl({
+	    src: ['/audio/part5.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  sixBg = new Howl({
+	    src: ['/audio/part6.mp3'],
+	    autoplay: false,
+	    loop: true,
+	    volume: 0.5,
+	    onend: function() {
+	      //console.log('Finished!');
+	    }
+	  });
+	  sevenBg = new Howl({
+	    src: ['/audio/part7.mp3'],
 	    autoplay: false,
 	    loop: true,
 	    volume: 0.5,

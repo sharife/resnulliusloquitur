@@ -80,7 +80,7 @@
       height: 100%;
       content: counter(i);
       counter-increment: i;
-      color: var(--primary);
+      /*color: var(--primary);*/
     }
 	}
 

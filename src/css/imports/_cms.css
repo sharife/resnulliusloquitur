@@ -65,7 +65,6 @@
 			content: '✱';
 			left: -1.33rem;
 			position: absolute;
-			color: var(--primary);
 		}
 	}
 
@@ -88,7 +87,8 @@
   /* Blockquotes */
   & blockquote {
     /*background-color: var(--grey-1);*/
-    border-left: 4px solid var(--grey-1);
+    border-top: 2px solid var(--grey-2);
+    border-bottom: 2px solid var(--grey-2);
     display: block;
     /*border-radius: var(--border-radius);*/
     padding: var(--spacing-medium);

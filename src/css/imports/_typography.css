@@ -37,6 +37,7 @@ sup {
   font-size: .6rem;
   font-weight: 700;
   vertical-align: super;
+  opacity: 0.5;
 }
 
 /* Measure is limited to ~66 characters */

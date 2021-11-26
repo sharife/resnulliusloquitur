@@ -62,7 +62,7 @@ li {
 }
 
 #front {
-    background: linear-gradient(-45deg, var(--black), #333, #000, var(--black));
+    background: linear-gradient(0deg, var(--black), #333, #000, var(--black));
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
 }
@@ -72,7 +72,7 @@ li {
         background-position: 0% 50%;
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 100% 100%;
     }
     100% {
         background-position: 0% 50%;

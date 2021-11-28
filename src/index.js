@@ -4,6 +4,15 @@ import "./css/main.css";
 
 
 
+$(function(){  // $(document).ready shorthand
+  $('.fade-1').delay(10).animate({'opacity':'1'},1000);
+  $('.fade-2').delay(1500).animate({'opacity':'1'},1500);
+  $('.fade-3').delay(3000).animate({'opacity':'1'},700);
+  $('.fade-4').delay(3500).animate({'opacity':'1'},1000);
+  $('.fade-5').delay(4000).animate({'opacity':'1'},1000);
+});
+
+
 
 var n = 0;
 

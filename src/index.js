@@ -77,7 +77,7 @@ $(window).scroll(function() {
             n++;
             oneBg.stop();
             introBg.play();
-            introBg.fade(0, 0.3, 10000);
+            introBg.fade(0, 0.3, 1000);
             console.log("intro");
             //$("body").animate({backgroundColor:'black'}, 300);
         }
@@ -90,7 +90,7 @@ $(window).scroll(function() {
             twoBg.stop();
             introBg.stop();
             oneBg.play();
-            oneBg.fade(0, 0.3, 10000);
+            oneBg.fade(0, 0.3, 1000);
             console.log("one");
             //$("body").animate({backgroundColor:'#003366'}, 300);
         }
@@ -101,7 +101,7 @@ $(window).scroll(function() {
             n++;
             oneBg.stop();
             twoBg.play();
-            twoBg.fade(0, 0.3, 10000);
+            twoBg.fade(0, 0.3, 1000);
             console.log("two");
            //$("body").animate({backgroundColor:'#A01515'}, 300);
         }
@@ -113,7 +113,7 @@ $(window).scroll(function() {
             twoBg.stop();
             fourBg.stop();
             threeBg.play();
-            threeBg.fade(0, 0.3, 10000);
+            threeBg.fade(0, 0.3, 1000);
             console.log("three");
             //$("body").animate({backgroundColor:'white'}, 300);
         }
@@ -125,7 +125,7 @@ $(window).scroll(function() {
             threeBg.stop();
             fiveBg.stop();
             fourBg.play();
-            fourBg.fade(0, 0.3, 10000);
+            fourBg.fade(0, 0.3, 1000);
             console.log("four");
             //$("body").animate({backgroundColor:'white'}, 300);
         }
@@ -137,7 +137,7 @@ $(window).scroll(function() {
             fourBg.stop();
             sixBg.stop();
             fiveBg.play();
-            fiveBg.fade(0, 0.3, 10000);
+            fiveBg.fade(0, 0.3, 1000);
             console.log("five");
             //$("body").animate({backgroundColor:'white'}, 300);
         }
@@ -149,7 +149,7 @@ $(window).scroll(function() {
             sevenBg.stop();
             fiveBg.stop();
             sixBg.play();
-            sixBg.fade(0, 0.3, 10000);
+            sixBg.fade(0, 0.3, 1000);
             console.log("six");
             //$("body").animate({backgroundColor:'white'}, 300);
         }
@@ -160,7 +160,7 @@ $(window).scroll(function() {
             n = 0;
             sixBg.stop();
             sevenBg.play();
-            sevenBg.fade(0, 0.3, 10000);
+            sevenBg.fade(0, 0.3, 1000);
             console.log("seven");
             //$("body").animate({backgroundColor:'white'}, 300);
         }

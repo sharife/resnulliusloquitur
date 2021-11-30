@@ -39,6 +39,14 @@
 	<p class="pt2 f4 b  center tc w-100"><a class="bg-black br1 pa1 ph3" style="cursor: pointer;" onclick="javascript:toggleMenu();">&times;</a></p>
 </div>
 
+
+<div id="next-screen" class="absolute fixed z-99 bg-center w-100" style="bottom:0; height:4rem;">
+	<p class="pt2 f4 b center tc w-100">
+		<a id="continue" href="#intro" class="btn bg-black br1 pa1 ph3" style="cursor: pointer;" onclick="javascript:dismissNext();">Continue</a>
+	</p>
+</div>
+
+
 <script type="text/javascript">
 
 	// left: 37, up: 38, right: 39, down: 40,
@@ -89,5 +97,10 @@
 	function toggleMenu (){
 		enableScroll();
 		$('#mobile-menu').fadeToggle();
+	}
+
+	function dismissNext() {
+    	enableScroll();
+    	$('#next-screen').fadeToggle();
 	}
 </script>

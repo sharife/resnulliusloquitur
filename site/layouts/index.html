@@ -2,31 +2,33 @@
 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle "desc" .Params.desc "blurb" .Params.blurb) }}
 
-
+<div class="y-mandatory">
 <div class="mw6 pa3 center cms">
 	<div id="intro"></div>
 	{{ partial "intro" . }}
-	<div id="one"></div>
+	<div id="one" class="snap"></div>
 	{{ partial "part-1" . }}
-	<div id="two"></div>
+	<div id="two" class="snap"></div>
 	{{ partial "part-2" . }}
-	<div id="three"></div>
+	<div id="three" class="snap"></div>
 	{{ partial "part-3" . }}
 </div>
 <div class="w-100 center" style="background-image: url('/img/dark-bg.png');">
 	<div class="mw6 pa3 center cms">
-		<div id="four"></div>
+		<div id="four" class="snap"></div>
 		{{ partial "part-4" . }}
 	</div>
 </div>
 <div class="mw6 pa3 center cms">
-	<div id="five"></div>
+	<div id="five" class="snap"></div>
 	{{ partial "part-5" . }}
-	<div id="six"></div>
+	<div id="six" class="snap"></div>
 	{{ partial "part-6" . }}
-	<div id="seven"></div>
+	<div id="seven" class="snap"></div>
 	{{ partial "part-7" . }}
 </div>
+
+<!-- footnotes -->
 <div class="mw6 pa3 center">	
 	<hr style="border-top: 1px dotted grey;" />
 	<ol class="f6 grey-3">
@@ -50,6 +52,7 @@
 		<li>18 J. Kameron Carter, “Paratheological Blackness,” South Atlantic Quarterly (2013), 594, discussing Hortense Spillers’s “Interstices: A Small Drama of Words”.</li>
 	</ol>
 	<!-- {{ .Content }} -->
+</div>
 </div>
 
 {{ end }}

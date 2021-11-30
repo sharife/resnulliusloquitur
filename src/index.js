@@ -2,6 +2,9 @@
 
 import "./css/main.css";
 
+var n = 0;
+var p = 0;
+
 
 
 $(function(){  // $(document).ready shorthand
@@ -13,8 +16,6 @@ $(function(){  // $(document).ready shorthand
 });
 
 
-
-var n = 0;
 
 
 
@@ -35,6 +36,28 @@ $(document).ready(function() {
     });
 });
 
+
+function displayNext(e) {
+    var target = e;
+    disableScroll();
+    $('#next-screen').fadeToggle();
+    document.getElementById("continue").href = target;
+}
+
+var lastScrollTop = 0;
+var scrollDir = "down";
+
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+       // downscroll code
+       scrollDir = "down";
+   } else {
+      // upscroll code
+      scrollDir = "up";
+   }
+   lastScrollTop = st;
+});
 
 
 function isScrolledIntoView(elem)
@@ -141,7 +164,21 @@ $(window).scroll(function() {
             console.log("seven");
             //$("body").animate({backgroundColor:'white'}, 300);
         }
-    }    
+    } 
+
+    // if (scrollDir == "down") {
+    //     if(isScrolledIntoView($('#intro-end'))) {
+    //         if (p == 0) {
+    //             p++;
+    //             displayNext("#one");
+    //         }
+    //     } else if(isScrolledIntoView($('#one-end'))) {
+    //         if (p > 0) {
+    //             p = 0;
+    //             displayNext("#two");
+    //         }
+    //     }
+    // }
 });
 
 // background color

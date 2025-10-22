@@ -41,6 +41,10 @@ li {
   font-size:  0.85rem;
 }
 
+.sofia {
+  font-family: "Sofia Sans Condensed", sans-serif;
+  font-weight: 700;
+}
 
 #mobile-menu {
   top:0;
